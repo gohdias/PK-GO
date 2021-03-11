@@ -24,6 +24,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         gerenciadorLocalizacao.startUpdatingLocation()
         
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let coordenadas = gerenciadorLocalizacao.location?.coordinate{
+            
+            let regiao = MKCoordinateRegion.init(center: coordenadas, latitudinalMeters: 200, longitudinalMeters: 200)
+            mapa.setRegion(regiao, animated: true)
+        }
+        
+        
+    }
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status != .authorizedWhenInUse && status != .notDetermined{
             //alerta
