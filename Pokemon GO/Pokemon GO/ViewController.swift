@@ -12,7 +12,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     @IBOutlet weak var mapa: MKMapView!
     var gerenciadorLocalizacao = CLLocationManager()
-    
+    var contador = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +26,18 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let coordenadas = gerenciadorLocalizacao.location?.coordinate{
+                
+        if contador < 5{
+            if let coordenadas = gerenciadorLocalizacao.location?.coordinate{
+                
+                let regiao = MKCoordinateRegion.init(center: coordenadas, latitudinalMeters: 200, longitudinalMeters: 200)
+                mapa.setRegion(regiao, animated: true)
+            }
             
-            let regiao = MKCoordinateRegion.init(center: coordenadas, latitudinalMeters: 200, longitudinalMeters: 200)
-            mapa.setRegion(regiao, animated: true)
+            contador += 1
+        }else{
+            gerenciadorLocalizacao.stopUpdatingLocation()
         }
-        
         
     }
     
