@@ -41,4 +41,26 @@ class CoreDataPokemon{
         pokemon.nomeImagem = nomeImagem
         pokemon.capturado = capturado
     }
+    
+    func recuperarTodosPokemons() -> [Pokemon]{
+        
+        let context = self.getContext()
+        
+        do {
+            let pokemons = try context.fetch(Pokemon.fetchRequest()) as! [Pokemon]
+            
+            if pokemons.count == 0 {
+                self.adicionarTodosPokemons()
+                return self.recuperarTodosPokemons()
+            }else{
+                
+            }
+            
+            return pokemons
+        } catch  {
+            //nada
+        }
+        return []
+    }
+    
 }

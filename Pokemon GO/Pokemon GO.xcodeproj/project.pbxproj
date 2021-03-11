@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		69393CA225F9D2CF00959A53 /* CoreDataPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69393CA125F9D2CF00959A53 /* CoreDataPokemon.swift */; };
+		69393CA525F9DBE000959A53 /* PokemonAnotacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69393CA425F9DBE000959A53 /* PokemonAnotacao.swift */; };
 		69E8D0AE25F99CC200553CD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E8D0AD25F99CC200553CD2 /* AppDelegate.swift */; };
 		69E8D0B025F99CC200553CD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E8D0AF25F99CC200553CD2 /* SceneDelegate.swift */; };
 		69E8D0B225F99CC200553CD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E8D0B125F99CC200553CD2 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		69393CA125F9D2CF00959A53 /* CoreDataPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPokemon.swift; sourceTree = "<group>"; };
+		69393CA425F9DBE000959A53 /* PokemonAnotacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAnotacao.swift; sourceTree = "<group>"; };
 		69E8D0AA25F99CC200553CD2 /* Pokemon GO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon GO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E8D0AD25F99CC200553CD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69E8D0AF25F99CC200553CD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				69E8D0BE25F99CC300553CD2 /* Info.plist */,
 				69E8D0B625F99CC200553CD2 /* Pokemon_GO.xcdatamodeld */,
 				69393CA125F9D2CF00959A53 /* CoreDataPokemon.swift */,
+				69393CA425F9DBE000959A53 /* PokemonAnotacao.swift */,
 			);
 			path = "Pokemon GO";
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				69E8D0B225F99CC200553CD2 /* ViewController.swift in Sources */,
 				69E8D0B825F99CC200553CD2 /* Pokemon_GO.xcdatamodeld in Sources */,
 				69E8D0AE25F99CC200553CD2 /* AppDelegate.swift in Sources */,
+				69393CA525F9DBE000959A53 /* PokemonAnotacao.swift in Sources */,
 				69E8D0B025F99CC200553CD2 /* SceneDelegate.swift in Sources */,
 				69393CA225F9D2CF00959A53 /* CoreDataPokemon.swift in Sources */,
 			);
