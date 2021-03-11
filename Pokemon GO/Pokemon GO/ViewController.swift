@@ -29,8 +29,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             print("exibe anotacao")
             if let coordenadas = self.gerenciadorLocalizacao.location?.coordinate{
                 let anotacao = MKPointAnnotation()
-                let latAleatoria = (Double(arc4random_uniform(400))-200) / 100000.0
-                let longAleatoria = (Double(arc4random_uniform(400))-200) / 100000.0
+                let latAleatoria = (Double(arc4random_uniform(300))-150) / 100000.0
+                let longAleatoria = (Double(arc4random_uniform(300))-150) / 100000.0
                 
                 anotacao.coordinate = coordenadas
                 anotacao.coordinate.latitude += latAleatoria
@@ -41,6 +41,26 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
              
             
         }
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let anotacaoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        
+        anotacaoView.image = #imageLiteral(resourceName: "pikachu-2")
+        
+        if annotation is MKUserLocation{
+            anotacaoView.image = #imageLiteral(resourceName: "player")
+        }
+        
+        var frame = anotacaoView.frame
+        frame.size.height = 40
+        frame.size.width = 40
+        
+        anotacaoView.frame = frame
+        
+        return anotacaoView
         
     }
     
