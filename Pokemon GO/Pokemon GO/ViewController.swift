@@ -24,7 +24,26 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         gerenciadorLocalizacao.startUpdatingLocation()
         
     }
-
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status != .authorizedWhenInUse && status != .notDetermined{
+            //alerta
+            let alertController = UIAlertController(title: "Permissao de localizaçao", message: "Precisamos da sua localizacao para que os Pokemons aparecam na sua tela!", preferredStyle: .alert)
+            let acaoConfiguracoes = UIAlertAction(title: "Abrir configuracoes", style: .default) { (alertaConfiguracoes) in
+                
+                if let configuracoes = NSURL(string: UIApplication.openSettingsURLString){
+                    UIApplication.shared.open(configuracoes as URL)
+                }
+            }
+            
+            let acaoCancelar = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+            
+            alertController.addAction(acaoConfiguracoes)
+            alertController.addAction(acaoCancelar)
+            
+            present(alertController, animated: true, completion: nil)
+            
+        }
+    }
 
 }
 
